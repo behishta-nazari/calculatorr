@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel=" stylesheet" type="text/css" href="style.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <form action="" class="box" name="box">
+        <input type="text" id="input" name="input" readonly>
+        <div class="btn">
+           <span class="key"  id="sum" onclick="document.box.input.value='';"> AC </span>
+           <span class="key"  id="sum"  onclick="del();">DE</span>
+           <span class="key"  id="sum"  onclick="insert('%')">%</span>
+           <span class="key"  id="sum"  onclick="insert('/')">/</span>
+        </div>
+
+        <div class="btn">
+            <span class="key" onclick="insert(7)" >7</span>
+            <span class="key" onclick="insert(8)" >8</span>
+            <span class="key" onclick="insert(9)" >9</span>
+            <span class="key"  id="sum" onclick="insert('*')">*</span>
+         </div>
+
+         <div class="btn">
+            <span class="key" onclick="insert(4)" >4</span>
+            <span class="key" onclick="insert(5)" >5</span>
+            <span class="key" onclick="insert(6)" >6</span>
+            <span class="key"  id="sum"  onclick="insert('-')">-</span>
+         </div>
+
+         <div class="btn">
+            <span class="key" onclick="insert(1)">1</span>
+            <span class="key" onclick="insert(2)">2</span>
+            <span class="key" onclick="insert(3)">3</span>
+            <span class="key" id="sum"   onclick="insert('+')">+</span>
+         </div>
+
+         <div class="btn">
+            <span class="key" onclick="insert(00)">00</span>
+            <span class="key" onclick="insert(0)">0</span>
+            <span class="key" onclick="insert( '.')">.</span>
+            <span class="key" id="sum-1"  onclick="sum()">=</span>
+         </div>
+        
+    </form>
+
+
+    <script type="text/javascript">
+      function del() {
+        document.box.input.value = document.box.key.value.slice(0, -1);
+      
+      }
+      var input = document.querySelector("#input");
+      function insert(key) {
+        input.value += key;
+   
+      }
+      function sum() {
+        document.box.input.value = eval(box.input.value);
+      
+      }
+      
+    </script>
+</body>
+</html>
